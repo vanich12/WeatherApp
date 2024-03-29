@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-
+  const progressData = [];
   function createWeatherCard(item) {
     const card = document.createElement('div');
     card.classList.add('weather_block');
@@ -28,24 +28,28 @@ document.addEventListener('DOMContentLoaded', function() {
     card.appendChild(value);
   
     if (["Влажность", "Давление", "Видимость"].includes(item.title)) {
+      {
+        item.title === "Давление" ? progressData.push(parseInt(item.value) / 10) : progressData.push(parseInt(item.value))
+      }
       const slider = document.createElement('div');
       slider.classList.add('weather_block_slider');
       slider.classList.add(item.title === "Давление" ? 'weather_block_slider--1' : 'weather_block_slider--2');
   
       const circle = document.createElement('div');
       circle.classList.add('weather_block_slider_circle');
-      circle.classList.add(item.title === "Давление" ? 'weather_block_slider_circle--1' : 'weather_block_slider_circle--2');
-
+      
       slider.appendChild(circle);
       infoContainer.appendChild(slider)
     }
+
     infoContainer.appendChild(addInfo);
-    console.log(infoContainer.children)
 
     card.appendChild(infoContainer);
   
     return card;
   }
+
+
 
 /// мне было лень писать еще один див под проценты :)
   const weatherData = [
@@ -58,10 +62,19 @@ document.addEventListener('DOMContentLoaded', function() {
   ];
 
   const cardContainer = document.querySelector('.weather_block_menu');
-
+  // движение круга
+  function moveProgress(element, number){
+    element.style.left = (element.style.left + number) + "%";
+  }
 
   weatherData.forEach((item) => {
     const card = createWeatherCard(item);
     cardContainer.appendChild(card);
   });
+
+  const progressBars = Array.from(document.querySelectorAll('.weather_block_slider_circle'));
+  
+  for (let i = 0; i < progressBars.length; ++i){
+    moveProgress(progressBars[i], progressData[i]);
+  }
 });

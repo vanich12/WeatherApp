@@ -1,0 +1,62 @@
+.slider_content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  margin-top: 32px;
+  gap: 16px;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+/*
+не до конца понял как по хорошему сверстать слайдер, сверстал как понял,
+если точнее то я не понял как скрыть элементы за стрелками как в макете
+*/
+.slider_content.hidden {
+  opacity: 0;
+}
+
+.slider_content_item{
+  background-color: var(--background-color);
+  color: var(--card-color);
+  padding: 22px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border-radius: 8px;
+}
+
+.slider_content_item_el{
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  color: var(--card-color);
+  line-height: 20px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.slider_content_arrow_right{
+  position: absolute;
+  padding: 12px 16px;
+  left: 0;
+  border-radius: 8px;
+  background-color: var(--background-color); /*почему то не работает именно в этом месте, если кто поможет, буду благодарен*/
+}
+
+.slider_content_arrow_right_container{
+  position: absolute;
+  left: 0;
+  backdrop-filter: blur(5px);
+  height: 70px;
+  width: 50px;
+}
+
+.slider_content_arrow_left{
+  position: absolute;
+  padding: 12px 16px;
+  right: 0;
+  border-radius: 8px;
+  background-color: var(--background-color);
+}

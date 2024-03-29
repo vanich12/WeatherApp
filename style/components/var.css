@@ -1,0 +1,21 @@
+:root{
+  --color: #f5f4f4;
+  --search-color: #F5F4F466;
+  --card-color: rgb(32, 32, 32);
+  --slider-color: rgb(166, 166, 166);
+  --background-color: rgba(245, 244, 244, 0.4);
+
+  
+  --font-size: 20px;
+  --font-family: "Raleway", sans-serif;
+  --font-weight: 400;
+  --font-big-weight: 700;
+  --line-height:32px;
+
+  --min-screen-width: 1280px;
+  --container-width: 1120px;
+
+  --card-icon-size: 32px;
+  --outline-color: rgba(245, 244, 244, 0.4);
+  --border-radius: 8px;
+}

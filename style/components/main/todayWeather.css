@@ -8,13 +8,13 @@
 
 .weather_information_city_name{
   font-size: 24px;
-  font-weight: 700;
+  font-weight: var(--font-big-weight);
   line-height: 32px;
   font-family: "Raleway", sans-serif;
 }
 
 .weather_information_date{
-  font-weight: 400;
+  font-weight: var(--font-weight);
   font-size: 20px;
   line-height: 24px;
   font-family: 'Raleway';
@@ -30,7 +30,7 @@
 
 .weather_information_time{
   font-size: 20px;
-  font-weight: 400;
+  font-weight: var(--font-weight);
   line-height: 24px;
 }
 
@@ -42,8 +42,7 @@
 
 .temperature{
   font-size: 100px;
-  font-weight: 700;
-  font-family: "Raleway", sans-serif;
+  font-weight: var(--font-big-weight)
 }
 
 .weather_information_footer{
@@ -77,22 +76,20 @@
   gap: 16px;
   height: 196px;
   width: 158px;
-  background-color: #F5F4F466;
+  background-color: var(--background-color);
   border-radius: 10px;
 }
 
 .weather_block_title{
-  font-family: "Raleway", sans-serif;
-  color: black;
-  font-weight: 700;
+	color: var(--card-color);
+  font-weight: var(--font-big-weight);
   font-size: 16px;
   line-height: 20px;
 }
 
 .weather_block_value{
-  font-family: "Raleway", sans-serif;
-  color: black;
-  font-weight: 400;
+	color: var(--card-color);;
+  font-weight:var(--font-weight);
   font-size: 32px;
   line-height: 32px;
 }
@@ -103,21 +100,9 @@
   position: absolute;
   width: 8px;
   height: 8px;
-  left: 75px;
-  right: 43px;
   top: 0;
   bottom: 0;
-}
-
-
-.weather_block_slider_circle--1{
-  left: 92px;
-  right: 26px;
-}
-
-.weather_block_slider_circle--2{
-  left: 27px;
-  right: 91px;
+  outline: 2px solid  var(--outline-color)
 }
 
 .weather_block_addInfo--0{
@@ -136,14 +121,14 @@
 
 .weather_information_sky_state{
   font-size: 20px;
-  font-weight: 400;
+  font-weight: var(--font-weight);
   line-height: 24px;
 }
 
 
 .temperature_state{
   font-size: 20px;
-  font-weight: 400;
+  font-weight: var(--font-weight);
   line-height: 24px;
 }
 
@@ -175,6 +160,6 @@
 .weather_block_addInfo{
   color: rgb(57, 57, 57);
   font-size: 12px;
-  font-weight: 400;
+  font-weight: var(--font-weight);
   line-height: 16px;
 }
