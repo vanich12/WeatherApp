@@ -14,53 +14,60 @@
     <div class="content">
       <header class="header">
         <img  src="public/icons/logo.svg" alt="Поиск" />
-        <div class="search_container">
+        <div class="search-container">
           <input class="header__search" placeholder="Поиск по городу">
-          <img class = "searc_icon" src="public/icons/search.svg" alt="Поиск" />
-          <img class = "header__icon header__icon--close" src="public/icons/close.svg" alt="Закрыть" />
+          <img class="search-icon" src="public/icons/search.svg" alt="Поиск" />
+          <img class="header__icon header__icon--close" src="public/icons/close.svg" alt="Закрыть" />
         </div>          
       </header>
-      <div class="content_main">
-        <div class="weather_information">
-          <div class="weather_information_head">
-            <div class="weather_information_city_name">
+      <div class="content__main">
+        <div class="weather-info">
+          <div class="weather-info__head">
+            <div class="weather-info__city-name">
               Москва
             </div>
-          <div class="weather_information_date">Суббота, 06 января</div>
-              <div class="weather_information_time">11:29</div>
+          <div class="weather-info__date">Суббота, 06 января</div>
+              <div class="weather-info__time">11:29</div>
           </div>
-          <div class="weather_information_termometr"> 
+          <div class="weather-info__thermometer"> 
             <div class="temperature">-7°</div>
           </div>
-          <div class="weather_information_footer">
+          <div class="weather-info__footer">
             <div class="row">
               <img src="public/icons/sky.svg" alt="Закрыть" />           
-              <div class="weather_information_sky_state">
+              <div class="weather-info__sky-state">
                 Облачно
               </div>
             </div>
-            <div class="temperature_state">
+            <div class="temperature-state">
               Ощущается как -11°
             </div>
           </div>
         </div>
-        <div class="weather_block_menu">
+        <div class="weather-block-menu">
         </div>
       </div>
       <div class="slider">
-        <div class="slider_head">
-          <div class="slider_head_title">Прогноз:</div>
+        <div class="slider__head">
+          <div class="slider__title">Прогноз:</div>
         </div>
-        <div class="slider_content">
+        <div class="slider__content">
+          <div class="slider__item-container">
+            <div class="slider__content-item">
+              <div class="slider__content-el">${item.time}</div>
+              <img src="${item.icon}" alt="Закрыть" />
+              <div class="slider__content-el">${item.temp}</div>
+            </div>
+        </div>
         </div>
       </div>
       <div class="footer">
-        Проект выполнен в рамках стажировки <a href="https://preax.ru">PREAX</a>
+        Проект выполнен в рамках стажировки <a href="https://preax.ru" target="_blank">PREAX</a>
     </div>
     </div>
   </div>
-  <script src="sripts/index.js"></script>
-  <script src="sripts/weatherBlock.js"></script>
-  <script src="sripts/timeBlock.js"></script>
+  <script src="scripts/index.js"></script>
+  <script src="scripts/weatherBlock.js"></script>
+  <script src="scripts/timeBlock.js"></script>
 </body>
 </html>

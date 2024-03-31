@@ -1,10 +1,4 @@
 
-* {
-  box-sizing: border-box;
-  color: var(--color);
-  font-family: var(--font-family)
-}
-
 *,
 *::before,
 *::after {
@@ -18,12 +12,16 @@ img {
 }
 
 body{
-  background-image:url('/public/background.jpg');
+  background-image:url('../public/background.jpg');
   background-position: center;
   font-variant-numeric: lining-nums;
+  color: white;
+  font-family: "Raleway", sans-serif;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  color: var(--color);
+  font-family: var(--font-family);
   line-height: 1.2;
   margin: 0;
   padding: 0;

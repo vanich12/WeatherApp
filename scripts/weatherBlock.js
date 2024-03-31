@@ -1,27 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
   const progressData = [];
+  
   function createWeatherCard(item) {
     const card = document.createElement('div');
-    card.classList.add('weather_block');
+    card.classList.add('weather-block');
 
-    const infoContainer = document.createElement('div')
-    infoContainer.classList.add('weather_block_Info')
+    const infoContainer = document.createElement('div');
+    infoContainer.classList.add('weather-block__info');
   
     const title = document.createElement('div');
-    title.classList.add('weather_block_title');
+    title.classList.add('weather-block__title');
     title.textContent = item.title;
   
     const icon = document.createElement('img');
     icon.src = item.icon;
   
     const value = document.createElement('div');
-    value.classList.add('weather_block_value');
+    value.classList.add('weather-block__value');
     value.textContent = item.value;
   
     const addInfo = document.createElement('div');
-    addInfo.classList.add('weather_block_addInfo');
+    addInfo.classList.add('weather-block__add-info');
     addInfo.innerHTML = item.additionalInfo;
-
   
     card.appendChild(title);
     card.appendChild(icon);
@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
         item.title === "Давление" ? progressData.push(parseInt(item.value) / 10) : progressData.push(parseInt(item.value))
       }
       const slider = document.createElement('div');
-      slider.classList.add('weather_block_slider');
-      slider.classList.add(item.title === "Давление" ? 'weather_block_slider--1' : 'weather_block_slider--2');
+      slider.classList.add('weather-block__slider');
+      slider.classList.add(item.title === "Давление" ? 'weather-block__slider--1' : 'weather-block__slider--2');
   
       const circle = document.createElement('div');
-      circle.classList.add('weather_block_slider_circle');
+      circle.classList.add('weather-block__slider-circle');
       
       slider.appendChild(circle);
       infoContainer.appendChild(slider)
@@ -49,9 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
     return card;
   }
 
-
-
-/// мне было лень писать еще один див под проценты :)
   const weatherData = [
     { title: "Влажность", value: "75%", icon: 'public/icons/humidity.svg', additionalInfo: `0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100%` },
     { title: "Давление", value: "761", icon: 'public/icons/pressure.svg', additionalInfo: 'Повышенное' },
@@ -61,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
     { title: "Сила ветра", value: "2 м/с", icon: 'public/icons/windPower.svg', additionalInfo: 'Северо-Западный' }
   ];
 
-  const cardContainer = document.querySelector('.weather_block_menu');
-  // движение круга
+  const cardContainer = document.querySelector('.weather-block-menu');
+  
   function moveProgress(element, number){
     element.style.left = (element.style.left + number) + "%";
   }
@@ -72,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     cardContainer.appendChild(card);
   });
 
-  const progressBars = Array.from(document.querySelectorAll('.weather_block_slider_circle'));
+  const progressBars = Array.from(document.querySelectorAll('.weather-block__slider-circle'));
   
   for (let i = 0; i < progressBars.length; ++i){
     moveProgress(progressBars[i], progressData[i]);

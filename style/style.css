@@ -1,6 +1,6 @@
 @import "components/app.css";
 @import "components/header.css";
-@import "components/main/input.css";
+@import "components/ui/input.css";
 @import "components/main/todayWeather.css";
 @import "components/footer.css";
 @import "bases.css";
