@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let html = '';
     const timeData = data === '24_hours' ? nearestTimeData : subsequentTimeData;
     const minWidth = data === '24_hours' ? '156px' : '275px'; // Установка различной ширины в зависимости от значения data
+
     timeData.forEach((item) => {
         html += `
           <div class="slider__content-item" style="min-width: ${minWidth};">
@@ -32,7 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="slider__content-el">${item.temp}</div>
           </div>
        `;
-    });      
+    });    
+    html+=`    <button class="btn card forecast-slider__navigation-btn" disabled>
+    <img src="/7db0246f-d52/public/icons/arrowLeft.svg" alt="Назад">
+  </button>`  
+
     return html;
   }
 

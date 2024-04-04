@@ -1,46 +1,32 @@
 .slider__content {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   width: 100%;
   position: relative;
   margin-top: 32px;
+  gap:32px;
 }
 
-.slider__content::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  border-radius: 8px;
-  background-image: url('/7db0246f-d52/public/icons/arrowRight.svg');
-  background-color: var(--background-color);
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 56px;
-  height: 48px;
-  border-radius: 8px;
-}
-
-.slider__content::before {
-  content: '';
-  position: absolute;
-  right: 0;
-  border-radius: 8px;
-  background-image: url('/7db0246f-d52/public/icons/arrowLeft.svg');
-  background-color: var(--background-color);
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 56px;
-  height: 48px;
-  border-radius: 8px;
-}
-
-/*
-Не до конца понял как по хорошему сверстать слайдер, сверстал как понял,
-если точнее, то я не понял как скрыть элементы за стрелками как в макете
-*/
 .slider__item-container.hidden {
   opacity: 0;
+}
+
+.forecast-slider__navigation-btn {
+  border: none;
+  height: 48px;
+  width: 56px;
+  padding: 12px 16px;
+  transition: background .2s ease-in-out;
+  border-radius: 8px;
+}
+
+.forecast-slider__navigation-btn:hover {
+  background: var(--background-color);
+}
+
+.forecast-slider__navigation-btn:disabled {
+  opacity: 0.8;
 }
 
 .slider__content-item {
@@ -68,7 +54,6 @@
   display: flex;
   justify-content: flex-start;
   gap: 16px;
-  width: 880px;
   mask-image: linear-gradient(90deg, #000 97%, transparent 100%);
   overflow: hidden;
   transition: opacity 0.5s ease;
