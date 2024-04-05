@@ -41,7 +41,7 @@
 }
 
 .temperature {
-  font-size: 100px;
+  font-size: 112px;
   font-weight: var(--font-big-weight)
 }
 
@@ -57,14 +57,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: var(--gap);
   padding: 32px;
 }
 
 .weather-block-menu {
   display: grid;
   grid-template-columns: repeat(3, minmax(120px, 170px));
-  gap: 16px;
+  gap: var(--gap);
   max-width: 506px;
 }
 
@@ -73,7 +73,7 @@
   flex-direction: column;
   align-items: center;
   padding-top: 16px;
-  gap: 16px;
+  gap: var(--gap);
   height: 196px;
   width: 158px;
   background-color: var(--background-color);

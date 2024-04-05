@@ -50,12 +50,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   const weatherData = [
-    { title: "Влажность", value: "75%", icon: 'public/icons/humidity.svg', additionalInfo: `0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100%` },
-    { title: "Давление", value: "761", icon: 'public/icons/pressure.svg', additionalInfo: 'Повышенное' },
-    { title: "Видимость", value: "28 км", icon: 'public/icons/visibility.svg', additionalInfo: 'Нормальная' },
-    { title: "Рассвет", value: "8:42", icon: 'public/icons/sunrise.svg', additionalInfo: 'Прошло: 02:47 ' },
-    { title: "Закат", value: "16:37", icon: 'public/icons/sunset.svg', additionalInfo: 'Осталось: 05:08' },
-    { title: "Сила ветра", value: "2 м/с", icon: 'public/icons/windPower.svg', additionalInfo: 'Северо-Западный' }
+    { title: "Влажность", value: "75%", icon: './public/icons/humidity.svg', additionalInfo: `0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100%` },
+    { title: "Давление", value: "761", icon: './public/icons/pressure.svg', additionalInfo: 'Повышенное' },
+    { title: "Видимость", value: "28 км", icon: './public/icons/visibility.svg', additionalInfo: 'Нормальная' },
+    { title: "Рассвет", value: "8:42", icon: './public/icons/sunrise.svg', additionalInfo: 'Прошло: 02:47 ' },
+    { title: "Закат", value: "16:37", icon: './public/icons/sunset.svg', additionalInfo: 'Осталось: 05:08' },
+    { title: "Сила ветра", value: "2 м/с", icon: './public/icons/windPower.svg', additionalInfo: 'Северо-Западный' }
   ];
 
   const cardContainer = document.querySelector('.weather-block-menu');

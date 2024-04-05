@@ -8,33 +8,34 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script type="module" src="scripts/base.js"></script>
 </head>
 <body>
   <div class="container">
     <div class="content">
       <header class="header">
-        <img  src="public/icons/logo.svg" alt="Поиск" />
+        <img  src="./public/icons/logo.svg" alt="Поиск" />
         <div class="search-container">
           <input class="header__search" placeholder="Поиск по городу">
-          <img class="search-icon" src="public/icons/search.svg" alt="Поиск" />
-          <img class="header__icon header__icon--close" src="public/icons/close.svg" alt="Закрыть" />
+          <img class="search-icon" src="./public/icons/search.svg" alt="Поиск" />
+          <img class="header__icon header__icon--close" src="./public/icons/close.svg" alt="Закрыть" />
         </div>          
       </header>
-      <div class="content__main">
+      <main class="content__main">
         <div class="weather-info">
           <div class="weather-info__head">
             <div class="weather-info__city-name">
               Москва
             </div>
-          <div class="weather-info__date">Суббота, 06 января</div>
-              <div class="weather-info__time">11:29</div>
-          </div>
+            <div class="weather-info__date">Суббота, 06 января</div>
+                <div class="weather-info__time">11:29</div>
+            </div>
           <div class="weather-info__thermometer"> 
             <div class="temperature">-7°</div>
           </div>
           <div class="weather-info__footer">
             <div class="row">
-              <img src="public/icons/sky.svg" alt="Закрыть" />           
+              <img src="./public/icons/sky.svg" alt="Закрыть" />           
               <div class="weather-info__sky-state">
                 Облачно
               </div>
@@ -46,29 +47,26 @@
         </div>
         <div class="weather-block-menu">
         </div>
-      </div>
+      </main>
       <div class="slider">
         <div class="slider__head">
           <div class="slider__title">Прогноз:</div>
         </div>
         <div class="slider__content">
           <button class="btn card forecast-slider__navigation-btn" disabled>
-            <img src="/7db0246f-d52/public/icons/arrowRight.svg" alt="Назад">
+            <img src="./public/icons/arrowRight.svg" alt="Назад">
           </button>
           <div class="slider__item-container">
           </div>
           <button class="btn card forecast-slider__navigation-btn" disabled>
-            <img src="/7db0246f-d52/public/icons/arrowLeft.svg" alt="Назад">
+            <img src="./public/icons/arrowLeft.svg" alt="Назад">
           </button>
         </div>
       </div>
-      <div class="footer">
+      <footer class="footer">
         Проект выполнен в рамках стажировки <a href="https://preax.ru" target="_blank">PREAX</a>
-    </div>
+    </footer>
     </div>
   </div>
-  <script src="scripts/index.js"></script>
-  <script src="scripts/weatherBlock.js"></script>
-  <script src="scripts/timeBlock.js"></script>
 </body>
 </html>
