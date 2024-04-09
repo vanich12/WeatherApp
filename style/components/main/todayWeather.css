@@ -3,20 +3,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+
 }
 
 .weather-info__city-name {
   font-size: 24px;
   font-weight: var(--font-big-weight);
-  line-height: 32px;
+  line-height: var(--line-height);
   font-family: "Raleway", sans-serif;
 }
 
 .weather-info__date {
   font-weight: var(--font-weight);
-  font-size: 20px;
-  line-height: 24px;
+  font-size: var(--font-size);
+  line-height: var(--line-height-md);
   font-family: 'Raleway';
 }
 
@@ -25,13 +25,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: var(--gap-sm);
 }
 
 .weather-info__time {
-  font-size: 20px;
+  font-size: var(--font-size);
   font-weight: var(--font-weight);
-  line-height: 24px;
+  line-height: var(--line-height-md);
+
 }
 
 .weather-info__thermometer {
@@ -42,21 +43,23 @@
 
 .temperature {
   font-size: 112px;
-  font-weight: var(--font-big-weight)
+  font-weight: var(--font-big-weight);
+  line-height: 112px;
 }
 
 .weather-info__footer {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--gap-sm);
   justify-content: center;
   align-items: center;
 }
 
 .content__main {
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
+  grid-template-columns: 1fr 1fr;
   gap: var(--gap);
   padding: 32px;
 }
@@ -64,6 +67,9 @@
 .weather-block-menu {
   display: grid;
   grid-template-columns: repeat(3, minmax(120px, 170px));
+  justify-content: flex-end;
+  margin-left: auto;
+  align-items: center; 
   gap: var(--gap);
   max-width: 506px;
 }
@@ -72,7 +78,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 16px;
+  padding: 16px;
   gap: var(--gap);
   height: 196px;
   width: 158px;
@@ -83,7 +89,7 @@
 .weather-block__title {
   color: var(--card-color);
   font-weight: var(--font-big-weight);
-  font-size: 16px;
+  font-size: var(--font-size-md);
   line-height: 20px;
 }
 
@@ -91,7 +97,7 @@
   color: var(--card-color);
   font-weight: var(--font-weight);
   font-size: 32px;
-  line-height: 32px;
+  line-height: var(--line-height);
 }
 
 .weather-block__slider-circle {
@@ -115,20 +121,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: var(--gap-sm);
   width: 100%;
 }
 
 .weather-info__sky-state {
-  font-size: 20px;
+  font-size: var(--font-size);
   font-weight: var(--font-weight);
-  line-height: 24px;
+  line-height: var(--line-height-md);
+
 }
 
 .temperature-state {
-  font-size: 20px;
+  font-size: var(--font-size);
   font-weight: var(--font-weight);
-  line-height: 24px;
+  line-height: var(--line-height-md);
+
 }
 
 .row {
@@ -141,7 +149,7 @@
 .weather-block__slider {
   display: flex;
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
   height: 8px;
   background: rgba(218, 218, 218, 0.4);
   position: relative;
@@ -158,7 +166,99 @@
 
 .weather-block__add-info {
   color: rgb(57, 57, 57);
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight);
-  line-height: 16px;
+  line-height: var(--line-height-sm);
+}
+
+@media (max-width:768px) {
+  .content__main{
+    grid-template-columns: 1fr;
+    gap: var(--tablet-gap);
+    padding: 24px;
+  }
+  .weather-block-menu{
+    margin: 0 auto;
+    gap: var(--gap-md);
+  }
+  .weather-info__thermometer{
+    margin: 24px auto;
+  }
+  .weather-info__sky-icon{
+    width: 24px;
+    height: 24px;
+  }
+  .weather-info__footer,
+  .weather-block__info,
+  .weather-info__head{
+    gap:6px
+  }
+}
+@media(max-width:375px){
+  .content__main{
+    gap: 32px;
+  }
+  .weather-block-menu{
+    grid-template-columns: repeat(3, minmax(98px, 99px));
+    gap:8px;
+  }
+  .weather-block{
+    height: auto;
+    width: auto;
+    padding: 12px;
+ gap: var(--gap-md);
+  }
+  .weather-block__value{
+    font-size: 22px;
+    line-height: var(--line-height-sm);
+  }
+  .weather-block__title{
+    font-size: var(--font-size-sm);
+
+  }
+
+  .weather-info__footer,
+  .weather-info__head{
+    gap:4px
+  }
+  .weather-block__slider{
+    height: 6px;
+    width: 74.33px;
+  }
+  .weather-block__slider-circle{
+    width: 6px;
+    height: 6px;
+  }
+  .weather-block__add-info{
+    line-height: 12px;
+    font-size: 10px;
+    letter-spacing: 0px;
+    text-align: center;
+    min-height: 24px;
+  }
+  .weather-info__city-name {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .temperature{
+    font-size: 56px;
+    line-height: 56px;
+  }
+  .temperature-state,
+  .weather-info__date,
+  .weather-info__time,
+  .weather-info__sky-state{
+    font-size: 14px;
+    line-height: var(--line-height-sm);
+  }
+  .weather-info__thermometer{
+    margin: 16px auto;
+  }
+  .weather-info__sky-icon{
+    width: 16px;
+    height: 16px;
+  }
+  .content__main{
+    padding: 16px;
+  }
 }

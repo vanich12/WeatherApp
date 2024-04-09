@@ -7,16 +7,32 @@
 
   
   --font-size: 20px;
+  --font-size-md: 16px;
+  --font-size-sm: 12px; 
+
   --font-family: "Raleway", sans-serif;
   --font-weight: 400;
   --font-big-weight: 700;
+
   --line-height:32px;
+  --line-height-md:24px;
+  --line-height-sm:16px;
 
   --min-screen-width: 1280px;
+  --min-screen-width-md: 768px;
+  --min-screen-width-sm: 375px;
   --container-width: 1120px;
 
   --card-icon-size: 32px;
   --outline-color: rgba(245, 244, 244, 0.4);
   --border-radius: 8px;
+
+
+
   --gap:16px;
+  --gap-sm: 8px; 
+  --gap-lg: 32px; 
+  --gap-md: 12px;
+  --tablet-gap:48px;
+
 }

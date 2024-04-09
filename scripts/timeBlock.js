@@ -3,13 +3,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const sliderContent = document.querySelector('.slider__item-container')
 
   const nearestTimeData = [
-    {time:'00:00', icon: './public/icons/sky.svg', temp:'-7°'},
-    {time:'00:00', icon: './public/icons/sky.svg', temp:'-7°'},
-    {time:'00:00', icon: './public/icons/sky.svg', temp:'-7°'},
-    {time:'00:00', icon: './public/icons/sky.svg', temp:'-7°'},
-    {time:'00:00', icon: './public/icons/sky.svg', temp:'-7°'},
-    {time:'00:00', icon: './public/icons/sky.svg', temp:'-7°'},
-    {time:'00:00', icon: './public/icons/sky.svg', temp:'-7°'},
+    {time:'15:00', icon: './public/icons/sky.svg', temp:'-7°'},
+    {time:'15:00', icon: './public/icons/sky.svg', temp:'-7°'},
+    {time:'15:00', icon: './public/icons/sky.svg', temp:'-7°'},
+    {time:'15:00', icon: './public/icons/sky.svg', temp:'-7°'},
+    {time:'15:00', icon: './public/icons/sky.svg', temp:'-7°'},
+    {time:'15:00', icon: './public/icons/sky.svg', temp:'-7°'},
+    {time:'15:00', icon: './public/icons/sky.svg', temp:'-7°'},
   ]
 
   const subsequentTimeData = [
@@ -23,13 +23,16 @@ document.addEventListener("DOMContentLoaded", function () {
   function hoursComponent(data) {
     let html = '';
     const timeData = data === '24_hours' ? nearestTimeData : subsequentTimeData;
-    const minWidth = data === '24_hours' ? '156px' : '275px'; // Установка различной ширины в зависимости от значения data
+    // если кто увидит, помогите с этим моментом, не понимаю что творится с моим слайдером, если я не ставлю какой либо min-width верстка ведет себя каким то магическим образом,будто элемент старается занять как можно меньше пространства не давая места дочерним элементам
+    // убил на это час-полтора так и не понял в чем дело.приходится ставить костыли
+    const mobileMedia = window.innerWidth <= 768;
+    const minWidth = data === '24_hours' ?  '156px':  '275px'; // Установка различной ширины в зависимости от значения data
 
     timeData.forEach((item) => {
         html += `
           <div class="slider__content-item" style="min-width: ${minWidth};">
             <div class="slider__content-el">${item.time}</div>
-            <img src="${item.icon}" alt="Закрыть" />
+            <img class ="slider__content-icon" src="${item.icon}" alt="Закрыть" />
             <div class="slider__content-el">${item.temp}</div>
           </div>
        `;

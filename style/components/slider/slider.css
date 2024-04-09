@@ -17,7 +17,7 @@
 }
 
 .slider__head-item {
-  font-size: 16px;
+  font-size: var(--font-size-md);
   line-height: 20px;
   color: var(--slider-color);
   font-weight: var(--font-big-weight);
@@ -46,4 +46,23 @@
 
 .slider__head-item:hover::after {
   opacity: 1;
+}
+
+@media(max-width:768px){
+  .slider__head{
+    gap: 24px;
+  }
+  .slider{
+    height: auto;
+    padding: 24px;
+  }
+}
+
+@media(max-width:375px){
+  .slider__head{
+    gap: 16px;
+  }
+  .slider{
+    padding: 16px;
+  }
 }

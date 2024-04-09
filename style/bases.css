@@ -45,3 +45,20 @@ body{
   backdrop-filter: blur(15px);
   border-radius: 5px;
 }
+
+@media (max-width:768px){
+  .container{
+    min-width: var(--min-screen-width-md);
+    padding: 24px;
+  }
+}
+
+@media (max-width:375px){
+  .container{
+    min-width: var(--min-screen-width-sm);
+    padding: 16px;
+  }
+  .content{
+    width: 375px;
+  }
+}

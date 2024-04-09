@@ -27,7 +27,7 @@
   height: 48px;
   position: relative;
   padding-left: 16px;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: var(--search-color);
 }
 
@@ -55,4 +55,20 @@
   top: 12px;
   opacity: 0;
   transition: opacity 0.3s ease; 
+}
+
+@media(max-width:768px){
+  .search-container{
+    width: 483px;
+  }
+}
+
+@media(max-width:375px){
+  .search-container{
+    width: 263px;
+    height: 32px;
+  }
+  .search-icon{
+    top:8px;
+  }
 }

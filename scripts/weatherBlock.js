@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     title.textContent = item.title;
   
     const icon = document.createElement('img');
+    icon.classList.add('weather-block__icon')
     icon.src = item.icon;
   
     const value = document.createElement('div');
@@ -21,7 +22,20 @@ document.addEventListener('DOMContentLoaded', function() {
   
     const addInfo = document.createElement('div');
     addInfo.classList.add('weather-block__add-info');
-    addInfo.innerHTML = item.additionalInfo;
+    if (typeof item.additionalInfo === 'object') {
+      addInfo.style.display = 'flex';
+      addInfo.style.width = '100%';
+      addInfo.style.justifyContent = 'space-between';
+      const min = document.createElement('div');
+      const max = document.createElement('div');
+      min.innerHTML = item.additionalInfo.min.toString()+'%';
+      max.innerHTML = item.additionalInfo.max.toString()+'%';
+      addInfo.appendChild(min);
+      addInfo.appendChild(max);
+    }
+    else{
+      addInfo.innerHTML = item.additionalInfo;
+    }
   
     card.appendChild(title);
     card.appendChild(icon);
@@ -34,23 +48,23 @@ document.addEventListener('DOMContentLoaded', function() {
       const slider = document.createElement('div');
       slider.classList.add('weather-block__slider');
       slider.classList.add(item.title === "Давление" ? 'weather-block__slider--1' : 'weather-block__slider--2');
-  
+      
       const circle = document.createElement('div');
       circle.classList.add('weather-block__slider-circle');
       
       slider.appendChild(circle);
+      addInfo.style.minHeight = 'auto';
       infoContainer.appendChild(slider)
     }
 
     infoContainer.appendChild(addInfo);
-
     card.appendChild(infoContainer);
   
     return card;
   }
 
   const weatherData = [
-    { title: "Влажность", value: "75%", icon: './public/icons/humidity.svg', additionalInfo: `0%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100%` },
+    { title: "Влажность", value: "75%", icon: './public/icons/humidity.svg', additionalInfo: { min: 0, max: 100 } },
     { title: "Давление", value: "761", icon: './public/icons/pressure.svg', additionalInfo: 'Повышенное' },
     { title: "Видимость", value: "28 км", icon: './public/icons/visibility.svg', additionalInfo: 'Нормальная' },
     { title: "Рассвет", value: "8:42", icon: './public/icons/sunrise.svg', additionalInfo: 'Прошло: 02:47 ' },
